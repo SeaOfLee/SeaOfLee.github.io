@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Lee Richardson',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-jss`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Poppins:bold'],
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
