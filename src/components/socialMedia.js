@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import injectSheet from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { SOCIAL_MEDIA_ACCOUNTS } from '../data/constants'
 
 const styles = {
@@ -13,14 +14,15 @@ const styles = {
   },
   iconWrapper: {
     cursor: 'pointer',
+    color: '#0356DD',
   },
 }
 
 class SocialMedia extends Component {
   handleSocialClick = account => window.open(account.url, '_blank')
 
-  getIcons = () =>
-    SOCIAL_MEDIA_ACCOUNTS.map(account => (
+  getIcons = () => {
+    const icons = SOCIAL_MEDIA_ACCOUNTS.map(account => (
       <div
         className={`${this.props.classes.iconWrapper}`}
         onClick={() => this.handleSocialClick(account)}
@@ -29,6 +31,19 @@ class SocialMedia extends Component {
         <FontAwesomeIcon icon={account.icon} />
       </div>
     ))
+
+    icons.push(
+      <a
+        className={`${this.props.classes.iconWrapper}`}
+        href={'mailto:lee@leerichardson.net?subject=Hello%20Lee'}
+        key={`social-email`}
+      >
+        <FontAwesomeIcon icon={faEnvelope} />
+      </a>
+    )
+
+    return icons
+  }
 
   render() {
     const { classes } = this.props

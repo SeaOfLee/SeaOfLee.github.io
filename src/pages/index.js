@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import injectSheet from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// this ensures that the icon CSS is loaded immediately before attempting to render icons
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout'
