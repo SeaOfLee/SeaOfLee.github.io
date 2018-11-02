@@ -2,6 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Lee Richardson',
   },
+  pathPrefix: '/contact-me',
+  scripts: {
+    deploy: 'gatsby build --prefix-paths && gh-pages -d public',
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-jss`,
