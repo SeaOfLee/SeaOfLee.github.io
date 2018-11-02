@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import injectSheet from 'react-jss'
@@ -10,11 +10,13 @@ import './layout.css'
 const styles = {
   app: {
     fontFamily: 'Poppins',
+    fontWeight: '400',
     color: '#0356DD',
+    padding: [90, 30],
   },
 }
 
-const Layout = ({ children }) => (
+const Layout = ({ classes, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -26,7 +28,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <Fragment className={`${classes.app}`}>
+      <div className={`${classes.app}`}>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -36,7 +38,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         <div
           style={{
             margin: '0 auto',
@@ -47,17 +49,13 @@ const Layout = ({ children }) => (
         >
           {children}
         </div>
-      </Fragment>
+      </div>
     )}
   />
 )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
-
-Layout.defaultProps = {
-  classes: styles,
 }
 
 export default injectSheet(styles)(Layout)
