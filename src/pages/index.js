@@ -10,7 +10,7 @@ import SocialMedia from '../components/socialMedia'
 const styles = {
   title: {
     fontWeight: '800',
-    fontSize: '4em',
+    fontSize: '3em',
   },
   text: {
     fontWeight: '400',
