@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import injectSheet from 'react-jss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faCode } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
@@ -29,15 +31,14 @@ class IndexPage extends Component {
     return (
       <Layout>
         <h1 className={`${classes.title}`}>
+          <FontAwesomeIcon icon={faCode} />
+          <br />
           Lee
           <br />
           Richardson
         </h1>
         {infoText(msg1)}
         {infoText(msg2)}
-        {/* <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-          <Image />
-        </div> */}
         <Link to="/page-2/">Go to page 2</Link>
       </Layout>
     )
