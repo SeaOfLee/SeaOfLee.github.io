@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'Lee Richardson',
   },
-  pathPrefix: '/SeaOfLee.github.io',
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-jss`,
