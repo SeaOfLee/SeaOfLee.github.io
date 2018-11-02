@@ -6,6 +6,7 @@ import { faCoffee, faCode } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
+import SocialMedia from '../components/socialMedia'
 
 const styles = {
   title: {
@@ -22,8 +23,8 @@ const styles = {
 
 class IndexPage extends Component {
   render() {
-    const infoText = text => <div className={`${classes.text}`}>{text}</div>
     const { classes } = this.props
+    const infoText = text => <div className={`${classes.text}`}>{text}</div>
     const msg1 =
       "I'm a frontend software engineer who loves coffee, cooking, loud music, learning, & Javascript."
     const msg2 =
@@ -39,6 +40,7 @@ class IndexPage extends Component {
         </h1>
         {infoText(msg1)}
         {infoText(msg2)}
+        <SocialMedia />
         <Link to="/page-2/">Go to page 2</Link>
       </Layout>
     )
