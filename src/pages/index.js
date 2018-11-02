@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import injectSheet from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faCode } from '@fortawesome/free-solid-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
@@ -41,7 +40,6 @@ class IndexPage extends Component {
         {infoText(msg1)}
         {infoText(msg2)}
         <SocialMedia />
-        <Link to="/page-2/">Go to page 2</Link>
       </Layout>
     )
   }
