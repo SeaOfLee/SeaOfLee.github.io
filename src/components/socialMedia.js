@@ -6,25 +6,6 @@ import { SOCIAL_MEDIA_ACCOUNTS } from '../data/socialMedia'
 import color from '../data/color'
 import breakpoints from '../data/breakpoints'
 
-const styles = {
-  socialWrapper: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    fontSize: '3em',
-    width: '70%',
-    margin: [50, 'auto'],
-  },
-  iconWrapper: {
-    cursor: 'pointer',
-    color: color.primary,
-  },
-  [breakpoints.small]: {
-    socialWrapper: {
-      width: '100%',
-    },
-  },
-}
-
 class SocialMedia extends Component {
   handleSocialClick = account => window.open(account.url, '_blank')
 
@@ -56,6 +37,25 @@ class SocialMedia extends Component {
     const { classes } = this.props
     return <div className={`${classes.socialWrapper}`}>{this.getIcons()}</div>
   }
+}
+
+const styles = {
+  socialWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    fontSize: '3em',
+    width: '70%',
+    margin: [50, 'auto'],
+  },
+  iconWrapper: {
+    cursor: 'pointer',
+    color: color.primary,
+  },
+  [breakpoints.small]: {
+    socialWrapper: {
+      width: '100%',
+    },
+  },
 }
 
 SocialMedia.defaultProps = {

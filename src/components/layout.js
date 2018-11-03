@@ -2,23 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import injectSheet from 'react-jss'
-import { config } from '@fortawesome/fontawesome-svg-core'
 import { StaticQuery, graphql } from 'gatsby'
 import color from '../data/color'
 import font from '../data/font'
 
 import './layout.css'
-
-config.autoAddCss = false
-
-const styles = {
-  app: {
-    fontFamily: font.default,
-    fontWeight: font.regular,
-    color: color.primary,
-    padding: [90, 30],
-  },
-}
 
 const Layout = ({ classes, children }) => (
   <StaticQuery
@@ -62,6 +50,15 @@ const Layout = ({ classes, children }) => (
     )}
   />
 )
+
+const styles = {
+  app: {
+    fontFamily: font.default,
+    fontWeight: font.regular,
+    color: color.primary,
+    padding: [90, 30],
+  },
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
