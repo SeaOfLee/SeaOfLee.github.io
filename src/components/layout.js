@@ -2,16 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import injectSheet from 'react-jss'
+import { config } from '@fortawesome/fontawesome-svg-core'
 import { StaticQuery, graphql } from 'gatsby'
+import color from '../data/color'
+import font from '../data/font'
 
-import Header from './header'
 import './layout.css'
+
+config.autoAddCss = false
 
 const styles = {
   app: {
-    fontFamily: 'Poppins',
-    fontWeight: '400',
-    color: '#0356DD',
+    fontFamily: font.default,
+    fontWeight: font.regular,
+    color: color.primary,
     padding: [90, 30],
   },
 }
@@ -32,13 +36,18 @@ const Layout = ({ classes, children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: 'Personal site for Lee Richardson.',
+            },
+            {
+              name: 'keywords',
+              content: 'personal, developer, frontend, javascript',
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         <div
           style={{
             margin: '0 auto',

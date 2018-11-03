@@ -8,14 +8,15 @@ import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SocialMedia from '../components/socialMedia'
+import font from '../data/font'
 
 const styles = {
   title: {
-    fontWeight: '800',
+    fontWeight: font.bold,
     fontSize: '3em',
   },
   text: {
-    fontWeight: '400',
+    fontWeight: font.regular,
     margin: {
       bottom: '15px',
     },

@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import injectSheet from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { SOCIAL_MEDIA_ACCOUNTS } from '../data/constants'
+import { SOCIAL_MEDIA_ACCOUNTS } from '../data/socialMedia'
+import color from '../data/color'
+import breakpoints from '../data/breakpoints'
 
 const styles = {
   socialWrapper: {
@@ -14,7 +16,12 @@ const styles = {
   },
   iconWrapper: {
     cursor: 'pointer',
-    color: '#0356DD',
+    color: color.primary,
+  },
+  [breakpoints.small]: {
+    socialWrapper: {
+      width: '100%',
+    },
   },
 }
 
