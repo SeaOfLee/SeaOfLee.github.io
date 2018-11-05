@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-jss`,
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
