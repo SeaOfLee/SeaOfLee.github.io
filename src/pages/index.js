@@ -3,10 +3,11 @@ import injectSheet from 'react-jss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
+import font from '../data/font'
 
 import Layout from '../components/layout'
 import SocialMedia from '../components/socialMedia'
-import font from '../data/font'
+import FunFacts from '../components/funFacts'
 
 class IndexPage extends Component {
   render() {
@@ -28,6 +29,7 @@ class IndexPage extends Component {
         {infoText(msg1)}
         {infoText(msg2)}
         <SocialMedia />
+        <FunFacts />
       </Layout>
     )
   }
