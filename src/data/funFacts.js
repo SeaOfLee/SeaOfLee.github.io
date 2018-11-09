@@ -1,10 +1,11 @@
 const facts = [
   'Played music on live TV in Japan - twice!',
-  'Opened for Social Distortion in Honolulu, HI',
+  'My band Neural Void opened for Social Distortion back in the day',
   'Born and raised on the Big Island of Hawaii',
   'My middle name (\'Iolana) means "Soaring Hawk" in Hawaiian',
   "Watched the Red Sox win the '18 World Series in person",
-  'Have seen Radiohead live 5 times',
+  'Favorite Drink (Alcohol): Bourbon',
+  'Favorite Coffee Shop in LA: The Boy & The Bear',
 ]
 
 export const FUN_FACTS = facts.map((fact, idx) => {

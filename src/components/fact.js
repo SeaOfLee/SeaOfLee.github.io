@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import injectSheet from 'react-jss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDizzy } from '@fortawesome/free-regular-svg-icons'
 import color from '../data/color'
 
 class Fact extends Component {
@@ -10,6 +12,7 @@ class Fact extends Component {
       <div className={`${classes.fact}`}>
         <p className={`${classes.factId}`}>Fun Fact #{fact.id}</p>
         <p className={`${classes.factText}`}>{fact.text}</p>
+        <FontAwesomeIcon className={`${classes.factIcon}`} icon={faDizzy} />
       </div>
     )
   }
@@ -17,17 +20,19 @@ class Fact extends Component {
 
 const styles = {
   fact: {
-    display: 'flex',
+    breakInside: 'avoid',
+    display: 'inline-block',
     padding: [20, 10],
-    // height: '200px',
-    width: '150px',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
+    marginBottom: '10px',
+    width: '100%',
     borderRadius: '8px',
     backgroundColor: '#FAFAFA',
     border: `1px solid ${color.primary}`,
     textAlign: 'center',
+  },
+
+  factIcon: {
+    fontSize: '2em',
   },
 
   factText: {
