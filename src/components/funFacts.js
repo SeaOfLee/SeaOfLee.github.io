@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import injectSheet from 'react-jss'
 import Fact from './fact'
-import color from '../data/color'
+import breakpoints from '../data/breakpoints'
 import { FUN_FACTS } from '../data/funFacts'
 
 class FunFacts extends Component {
@@ -16,17 +16,15 @@ class FunFacts extends Component {
 
 const styles = {
   factWrapper: {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // flexGrow: '1',
-    // flexWrap: 'wrap',
-    // justifyContent: 'center',
-    // alignItems: 'stretch',
     columnCount: 3,
     columnGap: 10,
     width: '80%',
     margin: [0, 'auto'],
     textAlign: 'center',
+
+    [breakpoints.small]: {
+      columnCount: 2,
+    },
   },
 }
 
