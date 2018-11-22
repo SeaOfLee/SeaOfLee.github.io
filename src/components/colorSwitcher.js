@@ -4,7 +4,7 @@ import color from '../data/color'
 
 class ColorSwitcher extends Component {
   render() {
-    const { classes } = this.props
+    const { classes, activeColor } = this.props
     const THEME_COLORS = [
       color.primary,
       color.purple,
@@ -16,7 +16,9 @@ class ColorSwitcher extends Component {
       <div className={`${classes.colorWrapper}`}>
         {THEME_COLORS.map(color => (
           <div
-            className={`${classes.colorTile}`}
+            className={`${classes.colorTile} ${
+              activeColor === color ? classes.active : ''
+            }`}
             style={{ backgroundColor: color }}
             onClick={() => this.props.onColorClick(color)}
             key={color}
@@ -43,6 +45,10 @@ const styles = {
     borderRadius: '4px',
     marginRight: '4px',
     cursor: 'pointer',
+  },
+
+  active: {
+    border: '3px solid black',
   },
 }
 

@@ -37,7 +37,10 @@ class IndexPage extends Component {
       "Let's connect! I would love to hear from you. You're awesome, BTW."
     return (
       <Layout>
-        <ColorSwitcher onColorClick={this.handleColorClick} />
+        <ColorSwitcher
+          onColorClick={this.handleColorClick}
+          activeColor={this.state.activeColor}
+        />
         <div style={indexStyle}>
           <h1 className={`${classes.title}`}>
             <FontAwesomeIcon icon={faCode} />
