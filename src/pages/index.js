@@ -8,6 +8,7 @@ import font from '../data/font'
 import Layout from '../components/layout'
 import SocialMedia from '../components/socialMedia'
 import FunFacts from '../components/funFacts'
+import ColorSwitcher from '../components/colorSwitcher'
 
 class IndexPage extends Component {
   render() {
@@ -29,6 +30,7 @@ class IndexPage extends Component {
         {infoText(msg1)}
         {infoText(msg2)}
         <SocialMedia />
+        <ColorSwitcher />
         <FunFacts />
       </Layout>
     )
