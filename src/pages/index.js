@@ -4,15 +4,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import font from '../data/font'
+import color from '../data/color'
 
 import Layout from '../components/layout'
 import SocialMedia from '../components/socialMedia'
-import FunFacts from '../components/funFacts'
 import ColorSwitcher from '../components/colorSwitcher'
 
 class IndexPage extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      activeColor: color.primary,
+    }
+  }
+
+  handleColorClick = color => {
+    this.setState({
+      activeColor: color,
+    })
+  }
+
   render() {
     const { classes } = this.props
+    const indexStyle = {
+      color: this.state.activeColor,
+    }
     const infoText = text => <div className={`${classes.text}`}>{text}</div>
     const msg1 =
       "I'm a frontend software engineer who loves coffee, cooking, loud music, learning, & Javascript."
@@ -20,18 +37,19 @@ class IndexPage extends Component {
       "Let's connect! I would love to hear from you. You're awesome, BTW."
     return (
       <Layout>
-        <h1 className={`${classes.title}`}>
-          <FontAwesomeIcon icon={faCode} />
-          <br />
-          Lee
-          <br />
-          Richardson
-        </h1>
-        {infoText(msg1)}
-        {infoText(msg2)}
-        <SocialMedia />
-        <ColorSwitcher />
-        <FunFacts />
+        <ColorSwitcher onColorClick={this.handleColorClick} />
+        <div style={indexStyle}>
+          <h1 className={`${classes.title}`}>
+            <FontAwesomeIcon icon={faCode} />
+            <br />
+            Lee
+            <br />
+            Richardson
+          </h1>
+          {infoText(msg1)}
+          {infoText(msg2)}
+          <SocialMedia activeColor={this.state.activeColor} />
+        </div>
       </Layout>
     )
   }

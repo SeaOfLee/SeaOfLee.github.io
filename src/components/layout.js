@@ -55,7 +55,6 @@ const styles = {
   app: {
     fontFamily: font.default,
     fontWeight: font.regular,
-    color: color.primary,
     padding: [90, 30],
   },
 }

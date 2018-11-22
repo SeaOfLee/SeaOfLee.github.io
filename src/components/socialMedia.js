@@ -10,6 +10,7 @@ class SocialMedia extends Component {
   handleSocialClick = account => window.open(account.url, '_blank')
 
   getIcons = () => {
+    const { activeColor } = this.props
     const icons = SOCIAL_MEDIA_ACCOUNTS.map(account => (
       <div
         className={`${this.props.classes.iconWrapper}`}
@@ -26,7 +27,7 @@ class SocialMedia extends Component {
         href={'mailto:lee@leerichardson.net?subject=Hello%20Lee'}
         key={`social-email`}
       >
-        <FontAwesomeIcon icon={faEnvelope} />
+        <FontAwesomeIcon icon={faEnvelope} color={activeColor} />
       </a>
     )
 
@@ -49,7 +50,7 @@ const styles = {
   },
   iconWrapper: {
     cursor: 'pointer',
-    color: color.primary,
+    display: 'block',
   },
   [breakpoints.small]: {
     socialWrapper: {
