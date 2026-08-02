@@ -40,6 +40,9 @@
     "gh-pages": "^2.0.1",
     "prettier": "^1.14.2"
   },
+  "overrides": {
+    "sharp": "^0.32.6"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/seaoflee/contact-me"
