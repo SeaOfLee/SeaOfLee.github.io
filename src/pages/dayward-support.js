@@ -79,7 +79,7 @@ const DaywardSupportPage = () => (
 
     <p>
       Questions, feedback, or something not working right? Email{' '}
-      <a href="mailto:l.richardson1@gmail.com">l.richardson1@gmail.com</a>.
+      <a href="mailto:lee@leerichardson.net">lee@leerichardson.net</a>.
     </p>
   </Layout>
 )
