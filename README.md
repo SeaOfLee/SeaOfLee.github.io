@@ -27,7 +27,7 @@ moved. GitHub redirects the old repo URL.
 | [/dayward-support](https://leerichardson.net/dayward-support/) | this repo | Dayward app support page |
 | [/fight-rite](https://leerichardson.net/fight-rite/) | [fight-rite](https://github.com/SeaOfLee/fight-rite) | `main` `/docs` |
 | [/swedish-snus](https://leerichardson.net/swedish-snus/) | [swedish-snus](https://github.com/SeaOfLee/swedish-snus) | `master` root |
-| [/magic8ball](http://leerichardson.net/magic8ball/) | [magic8ball](https://github.com/SeaOfLee/magic8ball) | `gh-pages` root |
+| [/magic8ball](https://leerichardson.net/magic8ball/) | [magic8ball](https://github.com/SeaOfLee/magic8ball) | `gh-pages` root — repo archived |
 
 Adding another is just enabling Pages on that repo — it appears at `leerichardson.net/<repo>`
 automatically, with no configuration here.
@@ -70,14 +70,21 @@ A     leerichardson.net    185.199.110.153
 A     leerichardson.net    185.199.111.153
 ```
 
+The domain is **verified** with GitHub (`protected_domain_state: verified`), backed by a TXT record
+at `_github-pages-challenge-seaoflee.leerichardson.net`. That record must stay in place. Verification
+stops any other GitHub account claiming `leerichardson.net` or its subdomains — which otherwise
+becomes possible the moment a Pages site here is disabled while DNS still points at GitHub.
+
+HTTPS is enforced on the apex and on every inherited path.
+
 ## Current state and known gaps
 
 - **Gatsby 2 / React 16 are several majors behind.** No security-critical exposure for a static
   brochure site, but `npm install` on a modern Node will likely need `--legacy-peer-deps`, and a
   future upgrade is a rewrite rather than a bump.
-- **The domain is not verified.** Worth doing: Settings → Pages → Verify domain, then add the TXT
-  record at Hover. Without it, if a Pages site here is ever disabled while DNS still points at
-  GitHub, another account can claim subdomains of `leerichardson.net`.
-- **`magic8ball` serves over HTTP only** — Enforce HTTPS is off in that repo's Pages settings.
+- **`magic8ball` is archived and therefore read-only.** Its Pages site still serves, but its
+  settings can no longer be changed. HTTPS was enforced before archiving; unarchive first if
+  anything else there ever needs adjusting.
 - Two abandoned repos, `SeaOfLee.github.io-DEPRECATED` and `SeaOfLee.github.io-Deprecated-`, are
-  earlier attempts at this same site. Neither has Pages enabled. They can be archived or deleted.
+  earlier attempts at this same site (2015). Neither has Pages enabled and nothing links to them.
+  Slated for deletion.
