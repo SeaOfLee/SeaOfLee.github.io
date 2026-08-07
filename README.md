@@ -85,6 +85,7 @@ HTTPS is enforced on the apex and on every inherited path.
 - **`magic8ball` is archived and therefore read-only.** Its Pages site still serves, but its
   settings can no longer be changed. HTTPS was enforced before archiving; unarchive first if
   anything else there ever needs adjusting.
-- Two abandoned repos, `SeaOfLee.github.io-DEPRECATED` and `SeaOfLee.github.io-Deprecated-`, are
-  earlier attempts at this same site (2015). Neither has Pages enabled and nothing links to them.
-  Slated for deletion.
+- Two abandoned 2015 attempts at this same site, `SeaOfLee.github.io-DEPRECATED` and
+  `SeaOfLee.github.io-Deprecated-`, have been deleted. Neither had Pages enabled and nothing linked
+  to them. Full-history `git bundle` archives were taken first and live outside this repo in
+  `~/Documents/repo-archives/`; restore either with `git clone <name>.bundle`.
