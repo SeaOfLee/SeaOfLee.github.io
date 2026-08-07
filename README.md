@@ -1,106 +1,83 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# SeaOfLee.github.io
 
-Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. 
+The **GitHub Pages user site** for [@SeaOfLee](https://github.com/SeaOfLee), served at
+**[leerichardson.net](https://leerichardson.net)**.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Why the repo name matters
 
-## 🚀 Quick start
+GitHub decides user-site status purely from the repository name: `<username>.github.io`. That has
+one consequence worth understanding, because it is the reason this repo is named what it is.
 
-1.  **Install the Gatsby CLI.**
+A custom domain set on the **user site** repo is inherited by every other Pages-enabled repo on the
+account, served under a path. A custom domain set on a *project* repo applies to that repo alone
+and nothing inherits.
 
-    The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
+This repo previously lived under the name `contact-me`. While it held `leerichardson.net` as a
+project site, the apex worked but nothing else could sit beneath it — every other project was
+stranded at `seaoflee.github.io/<repo>`. Renaming it back to `SeaOfLee.github.io` turned path
+inheritance on for the whole account at no cost: no DNS change, no certificate re-issue, no content
+moved. GitHub redirects the old repo URL.
 
-    ```sh
-    # install the Gatsby CLI globally
-    npm install -g gatsby-cli
-    ```
+## What is live
 
-2.  **Create a Gatsby site.**
+| URL | Repo | Source |
+|---|---|---|
+| [leerichardson.net](https://leerichardson.net) | this repo | `gh-pages` branch |
+| [/dayward-privacy](https://leerichardson.net/dayward-privacy/) | this repo | Dayward app privacy policy |
+| [/dayward-support](https://leerichardson.net/dayward-support/) | this repo | Dayward app support page |
+| [/fight-rite](https://leerichardson.net/fight-rite/) | [fight-rite](https://github.com/SeaOfLee/fight-rite) | `main` `/docs` |
+| [/swedish-snus](https://leerichardson.net/swedish-snus/) | [swedish-snus](https://github.com/SeaOfLee/swedish-snus) | `master` root |
+| [/magic8ball](http://leerichardson.net/magic8ball/) | [magic8ball](https://github.com/SeaOfLee/magic8ball) | `gh-pages` root |
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+Adding another is just enabling Pages on that repo — it appears at `leerichardson.net/<repo>`
+automatically, with no configuration here.
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter
-    ```
+The `dayward-*` pages back an App Store listing. Their URLs are external dependencies; don't move
+or rename them without updating the listing first.
 
-3.  **Start developing.**
+## This site
 
-    Navigate into your new site’s directory and start it up.
+Gatsby v2 with React 16 — old, and knowingly so. It is a small contact page plus the two Dayward
+support pages, and it has no reason to change often.
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+```sh
+npm install
+npm run develop     # local dev server at localhost:8000
+npm run build       # production build into public/
+npm run deploy      # build, then publish public/ to the gh-pages branch
+```
 
-4.  **Open the source code and start editing!**
+Two things to know before touching the build:
 
-    Your site is now running at `http://localhost:8000`!
-    
-    *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
-    
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-    
-## 🧐 What's inside?
+- **`master` is the source; `gh-pages` is generated.** Pages serves `gh-pages`. Never commit there
+  by hand — `npm run deploy` overwrites it wholesale.
+- **`gatsby-config.js` deliberately sets no `pathPrefix`**, so the `--prefix-paths` flag in the
+  deploy script is a no-op and the site builds for the domain root. Setting a `pathPrefix` would
+  break every asset URL at the apex.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+The `CNAME` file holding `leerichardson.net` must survive into the published output. It currently
+lives in the `gh-pages` branch and is re-added by GitHub if the custom domain is set in repo
+settings. If the apex ever starts 404ing after a deploy, check that first.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    ├── README.md
-    └── yarn.lock
+## DNS
 
-  1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.  
-  
-  2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-  
-  3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-  
-  4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-  
-  5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-  
-  6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-  
-  7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-  
-  8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-  
-  9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-  
-  10.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-  
-  11.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-  
-  12.  **`README.md`**: A text file containing useful reference information about your project.
-  
-  13.  **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm.  This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
+Hosted at Hover. The apex points at GitHub's four Pages IPs, with `www` alongside:
 
-## 🎓 Learning Gatsby
+```
+A     leerichardson.net    185.199.108.153
+A     leerichardson.net    185.199.109.153
+A     leerichardson.net    185.199.110.153
+A     leerichardson.net    185.199.111.153
+```
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+## Current state and known gaps
 
--   **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
--   **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+- **Gatsby 2 / React 16 are several majors behind.** No security-critical exposure for a static
+  brochure site, but `npm install` on a modern Node will likely need `--legacy-peer-deps`, and a
+  future upgrade is a rewrite rather than a bump.
+- **The domain is not verified.** Worth doing: Settings → Pages → Verify domain, then add the TXT
+  record at Hover. Without it, if a Pages site here is ever disabled while DNS still points at
+  GitHub, another account can claim subdomains of `leerichardson.net`.
+- **`magic8ball` serves over HTTP only** — Enforce HTTPS is off in that repo's Pages settings.
+- Two abandoned repos, `SeaOfLee.github.io-DEPRECATED` and `SeaOfLee.github.io-Deprecated-`, are
+  earlier attempts at this same site. Neither has Pages enabled. They can be archived or deleted.
