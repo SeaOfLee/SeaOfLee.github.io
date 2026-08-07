@@ -26,7 +26,7 @@ moved. GitHub redirects the old repo URL.
 | [/dayward-privacy](https://leerichardson.net/dayward-privacy/) | this repo | Dayward app privacy policy |
 | [/dayward-support](https://leerichardson.net/dayward-support/) | this repo | Dayward app support page |
 | [/fight-rite](https://leerichardson.net/fight-rite/) | [fight-rite](https://github.com/SeaOfLee/fight-rite) | `main` `/docs` |
-| [/swedish-snus](https://leerichardson.net/swedish-snus/) | [swedish-snus](https://github.com/SeaOfLee/swedish-snus) | `master` root |
+| [/swedish-snus](https://leerichardson.net/swedish-snus/) | [swedish-snus](https://github.com/SeaOfLee/swedish-snus) | `master` root — repo archived |
 | [/magic8ball](https://leerichardson.net/magic8ball/) | [magic8ball](https://github.com/SeaOfLee/magic8ball) | `gh-pages` root — repo archived |
 
 Adding another is just enabling Pages on that repo — it appears at `leerichardson.net/<repo>`
@@ -82,9 +82,10 @@ HTTPS is enforced on the apex and on every inherited path.
 - **Gatsby 2 / React 16 are several majors behind.** No security-critical exposure for a static
   brochure site, but `npm install` on a modern Node will likely need `--legacy-peer-deps`, and a
   future upgrade is a rewrite rather than a bump.
-- **`magic8ball` is archived and therefore read-only.** Its Pages site still serves, but its
-  settings can no longer be changed. HTTPS was enforced before archiving; unarchive first if
-  anything else there ever needs adjusting.
+- **`magic8ball` and `swedish-snus` are archived and therefore read-only.** Their Pages sites still
+  serve and still inherit the domain, but their repo settings can no longer be changed. HTTPS was
+  enforced on both before archiving — that ordering matters, because archiving freezes Pages
+  settings along with everything else. Unarchive first if either ever needs adjusting.
 - Two abandoned 2015 attempts at this same site, `SeaOfLee.github.io-DEPRECATED` and
   `SeaOfLee.github.io-Deprecated-`, have been deleted. Neither had Pages enabled and nothing linked
   to them. Full-history `git bundle` archives were taken first and live outside this repo in
